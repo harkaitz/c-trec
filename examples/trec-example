@@ -1,0 +1,30 @@
+#!/usr/bin/env trec
+launch
+
+## --------------------------------------------
+## ---- Help on how to build ------------------
+## --------------------------------------------
+type # First we will build and install trec
+enter
+wait wait
+type make clean all
+enter wait
+type sudo make install
+enter wait
+wait wait
+type # That was it, let's print the help string.
+enter
+wait wait wait
+
+
+## --------------------------------------------
+## ---- Clean the screen and print help -------
+## --------------------------------------------
+type clear
+enter
+wait wait
+type trec --help
+enter
+wait wait
+
+

@@ -1,0 +1,12 @@
+#!/usr/bin/env trec
+## This demostration opens a manpage and then quits.
+launch /bin/sh -i
+type man gcc
+enter
+wait
+wait
+down down down down
+wait
+type q
+type exit
+enter
