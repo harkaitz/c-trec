@@ -18,8 +18,10 @@ clean:
 	$(CC) -o $@ main.c trec.c $(CFLAGS_ALL) $(LIBS)
 
 ## -- license --
+ifneq ($(PREFIX),)
 install: install-license
 install-license: LICENSE
 	mkdir -p $(DESTDIR)$(PREFIX)/share/doc/c-trec
 	cp LICENSE $(DESTDIR)$(PREFIX)/share/doc/c-trec
+endif
 ## -- license --
