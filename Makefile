@@ -21,7 +21,8 @@ clean:
 ifneq ($(PREFIX),)
 install: install-license
 install-license: LICENSE
-	mkdir -p $(DESTDIR)$(PREFIX)/share/doc/c-trec
-	cp LICENSE $(DESTDIR)$(PREFIX)/share/doc/c-trec
+	@echo 'I share/doc/c-trec/LICENSE'
+	@mkdir -p $(DESTDIR)$(PREFIX)/share/doc/c-trec
+	@cp LICENSE $(DESTDIR)$(PREFIX)/share/doc/c-trec
 endif
 ## -- license --
