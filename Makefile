@@ -10,19 +10,20 @@ CFLAGS_ALL =$(LDFLAGS) $(CFLAGS) $(CPPFLAGS)
 
 all: $(PROGRAMS)
 install: $(PROGRAMS)
-	install -d                $(DESTDIR)$(PREFIX)/bin
-	install -m755 $(PROGRAMS) $(DESTDIR)$(PREFIX)/bin
+	@echo "I bin/ $(PROGRAMS)"
+	@install -d                $(DESTDIR)$(PREFIX)/bin
+	@install -m755 $(PROGRAMS) $(DESTDIR)$(PREFIX)/bin
 clean:
-	rm -f $(PROGRAMS)
+	@echo "D $(PROGRAMS)"
+	@rm -f $(PROGRAMS)
 ./trec: main.c trec.c trec.h
-	$(CC) -o $@ main.c trec.c $(CFLAGS_ALL) $(LIBS)
+	@echo "B $@ $^"
+	@$(CC) -o $@ main.c trec.c $(CFLAGS_ALL) $(LIBS)
 
 ## -- license --
-ifneq ($(PREFIX),)
 install: install-license
 install-license: LICENSE
 	@echo 'I share/doc/c-trec/LICENSE'
 	@mkdir -p $(DESTDIR)$(PREFIX)/share/doc/c-trec
 	@cp LICENSE $(DESTDIR)$(PREFIX)/share/doc/c-trec
-endif
 ## -- license --
