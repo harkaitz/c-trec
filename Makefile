@@ -7,23 +7,19 @@ CPPFLAGS   =
 LIBS       =-lutil
 PROGRAMS   =./trec
 CFLAGS_ALL =$(LDFLAGS) $(CFLAGS) $(CPPFLAGS)
-
+## -- targets
 all: $(PROGRAMS)
 install: $(PROGRAMS)
-	@echo "I bin/ $(PROGRAMS)"
-	@install -d                $(DESTDIR)$(PREFIX)/bin
-	@install -m755 $(PROGRAMS) $(DESTDIR)$(PREFIX)/bin
+	install -d                $(DESTDIR)$(PREFIX)/bin
+	install -m755 $(PROGRAMS) $(DESTDIR)$(PREFIX)/bin
 clean:
-	@echo "D $(PROGRAMS)"
-	@rm -f $(PROGRAMS)
+	rm -f $(PROGRAMS)
+## -- programs
 ./trec: main.c trec.c trec.h
-	@echo "B $@ $^"
-	@$(CC) -o $@ main.c trec.c $(CFLAGS_ALL) $(LIBS)
-
+	$(CC) -o $@ main.c trec.c $(CFLAGS_ALL) $(LIBS)
 ## -- license --
 install: install-license
 install-license: LICENSE
-	@echo 'I share/doc/c-trec/LICENSE'
-	@mkdir -p $(DESTDIR)$(PREFIX)/share/doc/c-trec
-	@cp LICENSE $(DESTDIR)$(PREFIX)/share/doc/c-trec
+	mkdir -p $(DESTDIR)$(PREFIX)/share/doc/c-trec
+	cp LICENSE $(DESTDIR)$(PREFIX)/share/doc/c-trec
 ## -- license --
