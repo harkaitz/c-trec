@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <sys/types.h>
 
 typedef struct trec trec;
 

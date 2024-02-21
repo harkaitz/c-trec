@@ -1,6 +1,8 @@
+#define _XOPEN_SOURCE 500
 #include "trec.h"
 #include <syslog.h>
 #include <string.h>
+#include <strings.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <errno.h>
